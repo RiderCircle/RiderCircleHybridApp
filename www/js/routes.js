@@ -11,13 +11,13 @@ angular.module('app.routes', [])
   
 
       .state('tabsController', {
-    url: '/page1',
+    url: '/home',
     templateUrl: 'templates/tabsController.html',
     abstract:true
   })
 
   .state('tabsController.riderCircle', {
-    url: '/page5',
+    url: '/rides',
     views: {
       'tab6': {
         templateUrl: 'templates/riderCircle.html',
@@ -35,8 +35,26 @@ angular.module('app.routes', [])
       }
     }
   })
+  .state('tabsController.login', {
+    url: '/login',
+    views: {
+      'tab5': {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+  .state('tabsController.register', {
+    url: '/login',
+    views: {
+      'tab5': {
+        templateUrl: 'templates/register.html',
+        controller: 'RegisterCtrl'
+      }
+    }
+  })
 
-$urlRouterProvider.otherwise('/page1/page5')
+$urlRouterProvider.otherwise('/home/rides')
 
   
 
