@@ -23,28 +23,6 @@ app.factory('Authentication', function ($http, SessionService, $q, $timeout, $lo
     };
 
 
- 
-    var checkFingerprintSupport = function () {
-        var deferred = $q.defer();
-
-
-
-
-        console.log('fingerprint service for iOS');
-        window.plugins.touchid.isAvailable(function () {
-
-            $timeout(deferred.resolve(true));
-
-        }, function (msg) {
-            //alert('not available, message: ' + msg)
-            $timeout(deferred.resolve(false));
-        }); // error handler: no TouchID available
-
-
-        return deferred.promise;
-    };
-
-
 
     var checkPreference = function () {
         var backendServiceUrl = GeturlService.geturl();
